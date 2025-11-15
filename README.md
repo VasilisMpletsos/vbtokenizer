@@ -1,4 +1,4 @@
-# VB Grad
+# VB Tokenizer
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
 [![NumPy](https://img.shields.io/badge/NumPy-4DABCF?logo=numpy&logoColor=fff)](#)
@@ -9,5 +9,4 @@ VB Tokenizer is a simple library of a custom made tokenizer that is the backbone
 
 ## 🚀 About This Project
 
-This project follows Andrej Karpathy’s tutorial ([Youtube Link](https://www.youtube.com/watch?v=zduSFxRajkE&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=9), on building a tokenizer for ground
-up.
+This project follows `Andrej Karpathy’s tutorial` ([Youtube Link](https://www.youtube.com/watch?v=zduSFxRajkE&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=9)) on building a tokenizer for ground up. The task is inspired from `Large Language Models are Unsupervised Learners` ([Paper Link](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)) that showed python level encoding of different input representation.
