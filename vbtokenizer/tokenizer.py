@@ -24,9 +24,32 @@ class SimpleTokenizer:
         self.vocab = self._build_vocab()
 
     def encode(self, input: str) -> list[int]:
-        tokens = list(input.encode("utf-8"))
-        for (token_1, token_2), value in self.merges.items():
-            tokens = self._merge_bytepairs(tokens, (token_1, token_2), value)
+        tokens = []
+        i = 0
+        encoded_sentnence = input.encode("utf-8")
+
+        while i < len(input):
+            matched_special = False
+
+            # Here i scan if the word at any point i matches a special token and then skip by that amount
+            for special_token in self.special_tokens.keys():
+                if input.startswith(special_token, i):
+                    i += len(special_token.encode("utf-8"))
+                    # print("Found special token", special_token)
+                    tokens.append(self.special_tokens[special_token])
+                    matched_special = True
+                    continue
+
+            # Go back to while because special token found
+            if matched_special:
+                continue
+
+            tokens.append(encoded_sentnence[i])
+            i += 1
+
+            for (token_1, token_2), value in self.merges.items():
+                tokens = self._merge_bytepairs(tokens, (token_1, token_2), value)
+
         return tokens
 
     def decode(self, tokenized_input) -> str:
